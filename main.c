@@ -77,7 +77,7 @@ int AtacarAliadoEspecial();
 int AtacarEnemigo();
 int AtacarEnemigoEspecial();
 void Defender();
-void DefenderEnemigo();//no acabada, demasiado trabajo... Un NPC nunca se defiende de todas maneras
+void DefenderEnemigo();//no acabada
 int Inventario();
 void CrearPersonaje();
 void CargaPersonaje();
