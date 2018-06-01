@@ -4,14 +4,6 @@
 #include <string.h>
 #include <time.h>
 
-//vidas
-//balancear experiencia y dinero(?)
-//refactorizar codigo
-//reparar experiencia(done)
-//modificadores stats(done)
-//diferentes enemigos(done)
-//bonus experiancia(done)
-//reparar zonas(done)
 
 
 
@@ -552,7 +544,7 @@ int AtacarAliado(){
     danyoAliado=DanyoAliado();
     flagEnd=0;
     if(enemigo.puntos.vida-danyoAliado<=0){
-            printf("\nHas hecho %d puntos de daño.\n",danyoAliado );
+            printf("\nHas hecho %d puntos de daÃ±o.\n",danyoAliado );
             enemigo.puntos.vida=enemigo.puntos.vida-danyoAliado;
             printf("Vida %s: %d, Vida %s: 0\nAcaba el combate. Ganador: ALIADO\n",aliado.nombre, aliado.puntos.vida, enemigo.nombre);
             printf("Has ganado %d G.\n", (10 +enemigo.puntos.nivel*3));
@@ -564,7 +556,7 @@ int AtacarAliado(){
             }
     else{
     enemigo.puntos.vida=enemigo.puntos.vida-danyoAliado;
-    printf("Has hecho %d puntos de daño.\n",danyoAliado );
+    printf("Has hecho %d puntos de daÃ±o.\n",danyoAliado );
     }
 return 0;
 }
@@ -575,7 +567,7 @@ int AtacarAliadoEspecial(){
     danyoAliado=DanyoAliadoEspecial();
     flagEnd=0;
     if(enemigo.puntos.vida-danyoAliado<=0){
-            printf("\nHas hecho %d puntos de daño.\n",danyoAliado );
+            printf("\nHas hecho %d puntos de daÃ±o.\n",danyoAliado );
             enemigo.puntos.vida=enemigo.puntos.vida-danyoAliado;
             printf("Vida %s: %d, Vida %s: 0\nAcaba el combate. Ganador: ALIADO\n",aliado.nombre, aliado.puntos.vida, enemigo.nombre);
             printf("Has ganado %d G.\n", (10 +enemigo.puntos.nivel*3));
@@ -587,7 +579,7 @@ int AtacarAliadoEspecial(){
             }
     else{
     enemigo.puntos.vida=enemigo.puntos.vida-danyoAliado;
-    printf("Has hecho %d puntos de daño.\n",danyoAliado );
+    printf("Has hecho %d puntos de daÃ±o.\n",danyoAliado );
     }
 return 0;
 }
@@ -599,7 +591,7 @@ int AtacarEnemigo(){
     danyoEnemigo=DanyoEnemigo();
     flagEnd=0;
      if(aliado.puntos.vida-danyoEnemigo<=0){
-            printf("%s te ha hecho %d puntos de daño.\n", enemigo.nombre, danyoEnemigo);
+            printf("%s te ha hecho %d puntos de daÃ±o.\n", enemigo.nombre, danyoEnemigo);
            // aliado.puntos.vida=aliado.puntos.vida-danyoEnemigo;
             printf("Vida %s: 0, Vida %s: %d\nAcaba el combate. Ganador: ENEMIGO\n", aliado.nombre,enemigo.nombre, enemigo.puntos.vida);
             flagEnd=1;
@@ -608,7 +600,7 @@ int AtacarEnemigo(){
             }
             else{
     aliado.puntos.vida=aliado.puntos.vida-danyoEnemigo;
-    printf("%s te ha hecho %d puntos de daño.\n", enemigo.nombre, danyoEnemigo);
+    printf("%s te ha hecho %d puntos de daÃ±o.\n", enemigo.nombre, danyoEnemigo);
             }
             return 0;
 }
@@ -620,7 +612,7 @@ int AtacarEnemigoEspecial(){
     danyoEnemigo=DanyoEnemigoEspecial();
     flagEnd=0;
      if(aliado.puntos.vida-danyoEnemigo<=0){
-        printf("%s te ha hecho %d puntos de daño.\n", enemigo.nombre, danyoEnemigo);
+        printf("%s te ha hecho %d puntos de daÃ±o.\n", enemigo.nombre, danyoEnemigo);
            // aliado.puntos.vida=aliado.puntos.vida-danyoEnemigo;
             printf("Vida %s: 0, Vida enemigo: %d\nAcaba el combate. Ganador: ENEMIGO\n", aliado.nombre,enemigo.puntos.vida);
             flagEnd=1;
@@ -629,7 +621,7 @@ int AtacarEnemigoEspecial(){
             }
             else{
     aliado.puntos.vida=aliado.puntos.vida-danyoEnemigo;
-    printf("%s te ha hecho %d puntos de daño.\n", enemigo.nombre, danyoEnemigo);
+    printf("%s te ha hecho %d puntos de daÃ±o.\n", enemigo.nombre, danyoEnemigo);
         }
 return 0;
 }
@@ -640,7 +632,7 @@ void Defender(){
     flagEnd=0;
     defense=aliado.puntos.defensa*2;
     damage=0.01 *Random115() * (((0.2 * enemigo.puntos.nivel+1) *50* enemigo.puntos.ataque)/(25 * defense)+2);
-    printf("%s te ha hecho %d puntos de daño.\n", enemigo.nombre, damage);
+    printf("%s te ha hecho %d puntos de daÃ±o.\n", enemigo.nombre, damage);
     if(aliado.puntos.vida-damage<=0){
         //aliado.puntos.vida=aliado.puntos.vida-damage;
         flagEnd=1;
@@ -659,7 +651,7 @@ void DefenderEnemigo(){
     flagEnd=0;
     defense=enemigo.puntos.defensa*2;
     damage=0.01 *Random115() * (((0.2 * aliado.puntos.nivel+1) *50* al.puntos.ataque)/(25 * defense)+2);
-    printf("%s te ha hecho %d puntos de daño.\n", enemigo.nombre, damage);
+    printf("%s te ha hecho %d puntos de daÃ±o.\n", enemigo.nombre, damage);
     if(aliado.puntos.vida-damage<=0){
         //aliado.puntos.vida=aliado.puntos.vida-damage;
         flagEnd=1;
@@ -678,7 +670,7 @@ int Inventario(){
 	int selector1;
 	int flagInvincib;
 
-	printf("Mochila:\n1)%d Pociones Grandes\n2)%d Pociones Pequeñas\n3)%d Pociones de Invincibilidad\n4)%d Galletas\n5)%d Bonificadores de experiencia\n6)%d Bonificadores de Velocidad\n10)Salir\nQue deseas hacer?:", mochila.numPotGan,mochila.numPotPeq, mochila.numPotInvin, mochila.numGalleta, mochila.numPotExp, mochila.numPotVel);
+	printf("Mochila:\n1)%d Pociones Grandes\n2)%d Pociones PequeÃ±as\n3)%d Pociones de Invincibilidad\n4)%d Galletas\n5)%d Bonificadores de experiencia\n6)%d Bonificadores de Velocidad\n10)Salir\nQue deseas hacer?:", mochila.numPotGan,mochila.numPotPeq, mochila.numPotInvin, mochila.numGalleta, mochila.numPotExp, mochila.numPotVel);
 	scanf("%d", &selector1);
 	if(selector1==1){
         if(mochila.numPotGan>0){
@@ -808,7 +800,7 @@ void CrearPersonaje(){
                 fprintf(fperfil, "0\n");//dinero
                 fprintf(fperfil, "0\n");//Punto Stat
                 fprintf(fperfil, "3\n");//vidas
-                fprintf(fperfil, "0\n");//potpequeñas
+                fprintf(fperfil, "0\n");//potpequeÃ±as
                 fprintf(fperfil, "0\n");//potgrandes
                 fprintf(fperfil, "1\n");//galletas
                 fprintf(fperfil, "0\n");//potinvincibilidad
@@ -843,7 +835,7 @@ void CrearPersonaje(){
             fprintf(fperfil, "0\n");//dinero
             fprintf(fperfil, "0\n");//Punto Stat
             fprintf(fperfil, "3\n");//vidas
-            fprintf(fperfil, "0\n");//potpequeñas
+            fprintf(fperfil, "0\n");//potpequeÃ±as
             fprintf(fperfil, "0\n");//potgrandes
             fprintf(fperfil, "1\n");//galletas
             fprintf(fperfil, "0\n");//potinvincibilidad
@@ -1013,11 +1005,11 @@ void Tienda(){
 
     printf("Bienvenido! Tenemos la mejor mercancia.\nQue deseas?\n");
     printf("Tienes %d G\n", aliado.dinero);
-    printf("1-Pocion pequeña: 50G\n2-Pocion grande: 150G\n3-Pocion de invincibilidad: 500G\n4-Galleta: 10G\n5-Bonificador de experiencia: 200G\n6-Bonificador de velocidad(Duplica tu velocidad durante un combate completo): 250G\n10-Salir\n");
+    printf("1-Pocion pequeÃ±a: 50G\n2-Pocion grande: 150G\n3-Pocion de invincibilidad: 500G\n4-Galleta: 10G\n5-Bonificador de experiencia: 200G\n6-Bonificador de velocidad(Duplica tu velocidad durante un combate completo): 250G\n10-Salir\n");
     scanf("%d", &selector);
     if(selector==1){
         if(aliado.dinero>=50){
-                printf("Has comprado una pocion pequeña.\n");
+                printf("Has comprado una pocion pequeÃ±a.\n");
             mochila.numPotPeq++;
             aliado.dinero=aliado.dinero-50;
         }
